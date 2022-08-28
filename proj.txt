@@ -1,0 +1,1323 @@
+Graham Koob
+ESET 2
+Thesis Project - Mapping Robot
+
+Page 1
+2010-09-15 
+
+Mapping ability
+
+	30cm accuracy min
+
+Chassis
+
+	15-30cm
+
+	2 Tracks
+
+	Encoders on tracks
+
+Battery life
+
+	>=10min
+
+Processor
+
+	Microcontroller
+
+Interface
+
+	LCD & Keypad
+
+Sensors
+
+	Ultrasonic
+
+		Pans
+
+		Resolution <=5cm
+
+		Lower Limit
+
+			<=30cm
+
+		Upper Limit
+
+			>=4m
+
+	Bump Sensors
+
+		4 in front
+
+		1-4 in back
+
+	Navigation
+
+		Direction
+
+			Compass
+
+				<=1 degree of resolution
+
+				<=5 degree of accuracy
+
+			Giro if Compass has interference problems indoors (Optional)
+
+		Velocity, Direction
+
+			Encoder
+
+				Resolution >=10 pulses per revolution
+
+
+2010-09-01
+
+Project Proposal
+
+	Robot
+
+		Range sensing
+
+		Bump sensors
+
+		Experiment platform
+
+		2 drive wheels
+
+
+2010-09-08
+
+Battery
+
+	Anderson plug?
+
+
+2010-09-10
+
+Pre build chassis if practical
+
+	ie:	http://www.robotshop.ca/rogue-robotics-atr-robot-base-4.html	
+		http://www.robotshop.ca/rogue-robotics-blue-robot-base-87.html	
+		http://www.robotshop.ca/lynxmotion-tri-track-chassis-kit-2.html_
+
+GPS
+
+Compass
+
+Range sensor
+
+	Ultrasonic
+
+	IR
+
+
+2010-09-12
+
+GPS
+
+	Expected accuracy +/-10m 
+	
+		May be mostly useless
+
+	http://www.robotshop.ca/4d-systems-miniature-66-channel-gps-receiver-breakout-2.html
+	http://www.robotshop.ca/4d-systems-miniature-66-channel-gps-receiver-2.html
+
+	http://www.sparkfun.com/commerce/tutorial_info.php?tutorials_id=127
+
+Compass
+
+	http://www.robotshop.ca/devantech-magnetic-compass-module-cmps03.html	
+	http://www.robotshop.ca/phidgets-magnetic-sensor.html
+
+
+2010-09-13
+
+Chassis
+
+	15-30cm
+
+	Track or wheels
+
+	Encoders on tracks
+
+Battery life
+
+	>=10min
+
+
+2010-09-14
+
+Compass (Magnetometer)
+
+	May use Giro, Accelerometer, or IMU instead
+
+	
+Mapping ability
+
+	>=30cm accuracy
+
+Range sensor 
+
+	IR unfeasible
+
+
+2010-09-15 
+
+Ultrasonic
+
+	Lower Limit
+
+		<=30cm
+
+	Upper Limit
+
+		>=4m
+
+// PRINTED
+
+
+2010-09-22 
+
+Gantt chart started
+
+Block diagram started
+
+
+2010-10-04 
+
+Will use giro instead of compass
+
+// PRINTED
+
+    Compass may be affected by any/every computer in room and too unreliable
+
+
+2010-10-05 
+
+Started budget
+
+
+2010-10-11
+
+Will not use giro, redundant with encoders and unjustifiable
+
+
+2010-10-12 
+
+Making comparison charts
+
+
+2010-10-27 
+
+Just found out track slip makes encoders difficult for tracks
+
+	Will look into IMUs, gyros
+
+	May have 1 track move forward and other move back at same rate to balance slip (0 point turn)
+
+// PRINTED
+
+2010-11-01 
+
+Gyroscopes are tiny (<1cm x 1cm for big ones) so will use breakout board
+
+	Pins <1mm across
+
+Parts to use (Not firm)
+
+	Lynxmotion Tri-Track Chassis Kit
+
+		Tracked
+
+		Reliable (Have not found major complaints)
+
+		More powerful than Traxster 2
+
+		Indoor/Outdoor
+
+		About same price as Traxster 2
+
+	Lynxmotion GHM-04 Gear motors
+
+		Rear shaft for encoders
+
+		Almost as powerful as GHM-02 provided with kit (best option for gear motors with rear shaft)
+
+	Sabertooth Dual 5A 6V-18V Regenerative Motor Driver
+
+		Regenerative
+
+		Future proof
+
+		Decent price
+
+		Many control options
+
+		Battery protection built in
+
+	Devantech SRF02 Ultrasonic Module
+
+		Cheep
+
+		Good power consumption
+
+		Good range
+
+		I2C & serial interface options
+
+	Parallax LISY300 Gyroscope
+
+		SPI interface
+
+		Decent price
+
+		On breakout board
+
+		Good power consumption
+
+
+2010-11-03 
+
+May use SD card for data logging
+
+	Uses SPI
+
+
+2010-11-08 
+
+Processor 
+
+	dsPIC30F6015 looks promising
+
+		Quadrature Encoder Interface looks useful
+
+		Has everything I need
+
+		May be able to use 1 encoder to track distance in straight line
+
+
+2010-11-22 
+
+Will start to buy components today
+
+Ordered chassis, ultrasonic, gyro, motors, motor controller, encoder, servo from robotshop.ca
+
+	Same as from 2010-11-01 except for the servo 
+	
+	Servo:
+	
+		Parallax (Futaba) Continuous Rotation Servo 
+		Product code : RB-Plx-180 
+
+Started on multisim
+
+
+2010-11-29 
+
+Voltage regulator
+
+	Linear
+
+		http://www.national.com/appinfo/power/files/f4.pdf
+
+		LDO best for batteries
+
+			Operate longer into discharge cycle
+
+	Switching
+
+		http://www.national.com/appinfo/power/files/f5.pdf
+
+		Buck : used to reduce a DC voltage to a lower DC voltage
+
+		Flyback: an O/P Voltage that is less than or greater then the I/P can be generated, as well as multiple O/P
+
+		TL494
+
+			http://focus.ti.com/docs/prod/folders/print/tl494.html
+
+				Boosting I_OUT
+
+					Pg.17, Figure 18
+
+
+	TLE7469-GV53-CT
+
+		http://search.digikey.com/scripts/DkSearch/dksus.dll?Detail&name=TLE7469G V53CT-ND
+
+		V_OUT = 5V & 3.3V
+
+		I_OUT = 200mA
+
+			Kind of tight 
+
+		$4.74
+
+	LP2975
+
+		http://search.digikey.com/scripts/DkSearch/dksus.dll?Detail&name=LP2975AIMM-5.0CT-ND
+
+		Has 5V and 3.3V packages
+
+		High I_OUT ability
+
+		$2.49
+
+	LT1616
+
+		http://search.digikey.com/scripts/DkSearch/dksus.dll?Detail&name=LT1616ES6%23TRMPBFCT-ND
+
+		Can do 5V or 3.3V with same package (Need 1 for each)
+
+		$4.70
+
+	MAX1626
+
+		http://search.digikey.com/scripts/DkSearch/dksus.dll?Detail&name=MAX1626ESA%2B-ND
+
+		$5.22
+
+		V_OUT = 3.3V/5V
+
+		I_OUT = 2A
+
+		Efficiency >90%
+
+		Requires external MOSFET
+
+
+2010-11-30 
+
+	MAX710
+
+		http://search.digikey.com/scripts/DkSearch/dksus.dll?Detail&name=MAX710ESE%2B-ND
+
+		$8.61
+
+		No external FETs 
+
+		V_out = 3.3V/5V
+
+		Up/Down converter
+
+		Nifty but un-needed features
+
+		Step-Down
+
+			Linear
+
+
+2010-12-01 
+
+	TLE4476
+
+		http://search.digikey.com/scripts/DkSearch/dksus.dll?Detail&name=TLE4476DCT-ND
+
+		$3.32
+
+		V_out = 3.3V, 5V
+
+		I_out = 350mA, 430mA
+
+		Seems like best option, will probably use
+
+Battery 
+
+	Probably Ni-Cd or Li-ion
+
+		Can't select until motors arrive (crappy datasheets)
+
+
+// PRINTED
+
+
+2010-12-10
+
+Shipment arrived 
+
+Started to assemble chassis
+
+
+2010-12-15 
+
+Started testing motors under load
+
+	On chassis
+
+		Empty:
+
+			I_max = 1.3A
+
+			I_ave = 0.73A
+
+		Weight as close to final as I can get (No scale)
+
+			I_max = 1.4A
+
+			I_ave = 0.7A (not consistent or accurate)
+
+Battery 
+
+	Going to assume that the robot will require 1A for 1h for battery research (slightly educated guess)
+
+	V = 7.2V
+
+	Capacity >= 1000mAH
+
+
+2010-12-16 
+
+Worked on mechanical schematics
+
+Interfacing 3.3V device to 5V micro
+
+	http://www.sparkfun.com/tutorials/65
+
+// PRINTED
+
+
+2011-01-04
+
+Worked on mechanical schematics
+
+
+2011-01-06 
+
+Selecting components
+
+	Resistors
+
+		10K
+
+			http://search.digikey.com/scripts/DkSearch/dksus.dll?Detail&name=P10KACT-ND
+
+		1K
+
+			http://search.digikey.com/scripts/DkSearch/dksus.dll?Detail&name=P1.0KACT-ND
+
+		330
+
+			http://search.digikey.com/scripts/DkSearch/dksus.dll?Detail&name=P330ACT-ND
+
+		100 
+
+			http://search.digikey.com/scripts/DkSearch/dksus.dll?Detail&name=P100ACT-ND
+
+		1
+
+			http://search.digikey.com/scripts/DkSearch/dksus.dll?Detail&name=P1.0ACT-ND
+
+	Capacitors
+
+		100nF
+
+			http://search.digikey.com/scripts/DkSearch/dksus.dll?Detail&name=311-1140-1-ND
+
+		470nF
+
+			http://search.digikey.com/scripts/DkSearch/dksus.dll?Detail&name=478-3774-1-ND
+
+		22uF
+
+			http://search.digikey.com/scripts/DkSearch/dksus.dll?Detail&name=587-1433-1-ND
+
+
+2011-01-10 
+
+Push Buttons
+
+	12mm^2 max
+
+		http://www.sparkfun.com/products/9190	
+
+Whisker 
+
+	Interesting
+
+		http://www.solarbotics.com/products/tact3/
+
+
+2011-01-11 
+
+Interfacing SD card to SPI
+
+	http://www.google.ca/search?hl=en&client=firefox-a&rls=org.mozilla:en-US:official&q=sd+card+spi+mode&revid=248056703&sa=X&ei=YcIsTZbcJoihnAeEosXNDA&ved=0CGkQ1QIoAQ
+
+	http://www.cyantechnology.com/public/AN037InterfacingtoanMMCorSDCardviaSPI.pdf						// SD SPI Spec 2011-01-24  
+
+	http://downloads.amilda.org/MODs/SDCard/SD.pdf														// SD SPI Spec 2011-01-24  
+
+	http://www.google.ca/search?hl=en&client=firefox-a&rls=org.mozilla%3Aen-US%3Aofficial&q=micro+sd+card+spi+mode&btnG=Search
+
+	http://www.pqi.com.tw/upload/download/micro%20SD(2).pdf												// microSD to SD conversion 2011-01-24  
+
+	http://www.sdcard.org/developers/tech/sdcard/pls/simplified_specs/
+
+
+2011-01-14 
+
+Ultrasonic 
+
+	May use PolyMorph to make mount
+
+Buttons
+
+	http://www.sparkfun.com/products/9190
+
+		Looks interesting 
+
+		Hope to find it on Digi-Key
+
+	Look into
+
+		http://search.digikey.com/scripts/DkSearch/dksus.dll?Selection
+
+
+2011-01-17 
+
+Buttons
+
+	Keypad
+
+		http://search.digikey.com/scripts/DkSearch/dksus.dll?Detail&name=EG1311-ND
+
+	Reset
+
+		http://search.digikey.com/scripts/DkSearch/dksus.dll?Detail&name=P13348SCT-ND
+
+
+2011-01-20 
+
+Ordered parts
+
+	Robotshop.ca
+
+		Vex charger
+
+			http://www.robotshop.ca/vex-robotics-smart-charger-no-power-cable.html
+
+		Vex 7.2V. 2000mAH NiMH Battery Pack
+
+			http://www.robotshop.ca/vex-7-2v-2000mah-nimh-battery-pack-2.html
+
+		VEX Robotics North American Power Cord
+
+			http://www.robotshop.ca/vex-robotics-north-american-power-cord.html
+
+		Break Away Headers - Straight
+
+			http://www.robotshop.ca/sfe-straight-pin-headers.html
+
+		40 Pin Break Away Header - Right Angle
+
+			http://www.robotshop.ca/sfe-right-angle-pin-headers.html
+
+		Break Away Female Headers
+
+			http://www.robotshop.ca/break-away-female-headers.html
+
+	Solarbotics.com
+
+		TACT3
+
+			https://www.solarbotics.com/products/tact3/
+
+//TODO before designing PCB
+
+	Check pin outs
+
+		SD card										// Done 2011-01-24  
+
+		LISY300
+
+		Encoder
+
+		Servos										// Done 2011-01-24  
+
+		Whiskers
+
+		LCD
+
+		Keypad										// Done 2011-01-24 
+
+	Renumber jumpers								// Done 2011-01-24  
+
+		EX:	J29 becomes J1 and J11 becomes JN1
+
+	Look into replacing R13 with diode clamper		// Done 2011-01-24  
+
+	Check R4										// Removed 2011-01-24  
+
+	Update BOM
+
+	Fix pin # for ICs
+
+
+2011-01-24 
+
+Ordered from digi-key
+
+Fix microSD PCB outline
+
+
+2011-01-25 
+
+Solarbotics shipment arrived
+
+	TACT3 sensors
+
+		Dimensions
+
+			Rod
+
+				D = 1.6mm
+
+				L = 26mm
+
+			Spring
+
+				Contact
+
+					D = 0.84mm
+
+					L = 11mm
+
+				Coil
+
+					D_o = 5.15mm
+
+					D_i = 3.5mm
+
+					L = 14.5mm
+
+			Whisker
+
+				Length is random between 210mm & 315mm
+
+
+2011-01-27 
+
+Digi-key shipment arrived
+
+
+2011-01-28 
+
+Robot Shop shipment arrived
+
+TACT3
+
+	Stretching the spring makes it more sensitive
+
+
+2011-02-01 
+
+TACT3
+
+	Information on pad placement
+
+		http://solarbotics.com/resources/projects/
+
+		http://www.solarbotics.com/projects/beam-applications/2007/07/bep-application-servocore-walker/
+
+// PRINTED
+
+
+2011-02-10 
+
+Libraries 
+
+	C:\Program Files\Microchip\mplabc30\v3.25\support\dsPIC30F\h
+
+Oscillator
+
+	Internal = 7.37MHz RC with PLL active (4x, 8x, 16x)
+
+	Internal Fast RC (FRC)
+
+		OSC1 pin cannot be used as an I/O pin
+
+	Low-Power RC (LPRC)
+
+	Version 3 system
+
+		FRM - Register 7-3
+
+		FRM - Table 7-4
+
+	FCY = FOSC/4 = [(F_(source OSC) * PLL_Multiplier)/(Programmable_Postscaler * 4)]
+
+		FRM - Equation 7-1
+
+	Configuration bits
+
+		FOSC Configuration register
+
+			Nonvolatile 
+
+			FOS bits
+
+				OSC source used at reset
+
+			FPR bits
+
+				Operating mode of primary OSC
+
+Reset
+
+	BOR
+
+		Brownout Reset
+
+		Not used
+
+	POR
+
+		Power-on Reset
+
+		Not used
+
+
+2011-02-11 
+
+Port_Init
+
+	PORTB = 0000 0000 xxxx x100 = 0x0004
+	TRISB = 0000 0000 1111 1000 = 0x00F8
+			^				 ^^N/C
+			 ^^^ ^^^^LCD; RS, RW, CS, DB4, DB5, DB6, DB7	(Out, Active
+					  ^^Programming; PGD/EMUD, PGC/EMUC
+					    ^^ ^Encoder
+							^SPI CS0	(Out, Active Low)
+
+	PORTC = 0000 0000 0000 0000 = 0x0000
+	TRISC = 0000 0000 0000 0000 = 0x0000
+			^^^N/C
+			   ^ ^^^^ ^^^^ ^^^^Do not exist
+
+	PORTD = 0000 0000 xxxx xxxx	= 0x0000
+	TRISD = 0000 0000 1111 1111 = 0x00FF
+			^^^^Do not exist
+				 ^^^^N/C
+					  ^^^^Whiskers		(In, Active
+						   ^^^^Keypad	(In, Active 
+
+	PORTE = 0000 0000 1110 0000	= 0x00E0
+	TRISE = 0000 0000 0000 0000 = 0x0000
+			^^^^ ^^^^Do not exist
+					  ^^^SPI CS<3:1>	(Out, Active Low)
+						 ^ ^^N/C
+							 ^^PWM1		(Out, )
+
+	PORTF = 0000 0000 000x 0x00 = 0x0000
+	TRISF = 0000 0000 0001 0100 = 0x0014
+			^^^^ ^^^^ ^Do not exist
+					   ^	 ^^N/C
+					    ^^ ^^Serial
+						^  ^TX
+						 ^  ^RX
+
+	PORTG = 0000 0010 x000 0000 = 0x0200
+	TRISG = 0000 0000 1000 0000 = 0x0080
+			^^^^ ^^		^^	 ^^Do not exist
+				   ^^ ^^SPI; /SS2, SDO, SDI,SCK
+						   ^^I2C; SDA,SCL
+
+
+2011-02-14 
+
+OSC
+
+	OSCCON
+
+	OSCTUN
+
+		TUN<3:0> = 0000
+
+			Default OSC speed
+
+	FCY = FOSC/4 = [(F_(source OSC) * PLL_Multiplier)/(Programmable_Postscaler * 4)] = (7.37MHz * 4)/(1 * 4) = 7.37MHz
+
+RS232
+
+	Sabertooth
+
+		Baud rate
+
+			8N1
+
+			Baud
+			
+				2400
+
+				9600	// Best
+
+				19200	// Best
+
+				38400
+
+		Control 2 motors with 8B
+
+		Each motor has 7b resolution
+
+			Motor 1
+
+				1	= full reverse
+
+				64	= 0x40 = stop	
+
+				127	= 0x7F = full forward
+
+			Motor 2
+
+				128 = full reverse
+
+				192 = 0xC0 = stop
+
+				255 = full forward
+
+			All stop 
+
+				0
+
+			1	= 0000 0001
+			64	= 0010 0000
+			127 = 0111 1111
+
+			128 = 1000 0000
+			192 = 1100 0000
+			255 = 1111 1111
+
+
+
+
+2011-02-17 
+
+Completed assembly of control board & interface board\
+
+	Didn't explode on power up 
+
+
+2011-02-18 
+
+SPI
+
+	LISY300
+
+		F_SCLK	= 1.0-4.0MHz
+
+
+2011-02-22 
+
+		16b
+
+		f_update = 88Hz
+
+		Slave
+
+		3 pin
+
+		Data on CLK Rise
+
+			CKP = 1
+
+			CKE = 0
+
+			SMP = 0
+
+	FSCK = FCY/(Pri_Pre * Sec_Pre)
+
+		= 7.37MHz/(4:1 * 1:1) = 1.8425MHz
+
+	SPITBF
+
+
+2011-02-23 
+
+Sabertooth
+
+	Switches
+
+		123456
+		101101
+		^^ ^^19200 Baud
+		  ^Lithium Cutoff disabled
+			 ^Standard Simplified Serial mode
+
+
+2011-02-24 
+
+Interrupts
+
+	Interrupt Vector Table
+
+		AIVT
+
+			Use 
+
+			Supports debugging 
+
+			ALTIVT	(INTCON2<15>)
+
+		Each vector contains a 24b address.  The value programmed in each vector location is the starting address of the associated ISR
+
+	Registers
+
+		VECNUM<5:0>	
+
+		INTTREG<15:0>
+
+	TIMER 2
+
+		Vector Number	= 14
+
+		IVT ADDR	= 0x000020
+
+		AIVT ADDR	= 0x0000A0
+
+		Interrupt Flag
+		
+			T2IF in IFS0<6>
+
+	Interrupt Priority
+
+		Status bits
+
+			IPL<2:0>	in SR<7:5>
+
+			IPL3		in CORCON<3>
+
+		Set to disable interrupts below level
+
+		Disable all user interrupt sources by seting IPL<2:0> = 111
+
+
+2011-02-25 
+
+Future changes to PCB
+
+	Move J/JN14 up a bit
+
+	VBAT = Blue screw terminals
+
+Interrupts
+
+	See DS51284 - 8.4.1
+
+	Interrupt Vectors
+
+		DS51284 - Table 8-1
+
+		IRQ#	Primary Name	Alternate Name		Vector Function
+		6		_T2Interrupt	_AltT2Interrupt		TMR2 Timer 2 expired
+
+
+2011-02-28
+
+LISY300 running 
+
+	Conversion to voltage may be off but everything else works
+
+
+2011-03-01
+
+RS-232
+
+	LPBACK
+
+		UxCTS
+
+		UxRTS
+
+		BCLK
+
+QEI
+
+	100 cycles/rev
+
+	400 quad counts/rev
+
+	f_max = 30kHz
+
+	GHM-04
+
+		RPM = 175
+
+		Reduction = 50:1
+
+		RPM_encoder = 175 * 50 = 8750
+
+		RPS_encoder = 8750/60 = 145.833 RPS
+
+		f_max(encoder) = 145.833 RPS * 100 = 1,458.333Hz = 1.458kHz
+
+		f_max(experemental) = 13.1164kHz
+
+	Sprocket
+
+		d = 2.75" = 69.85mm
+
+		c = 219.4402469mm = 219.440mm
+
+	Max speed = RPM * c = 175 * 219mm = 38.325m/min
+
+	QEIM1 = 0
+
+	POSCNT
+
+2011-03-02
+
+	f_quad(max) = FCY/3 = 7.37MHz/3 = 2.457MHz
+	
+	f_quad(filtered) = f_filter/6
+
+	POSCNT
+
+		Examine the contents of the count 
+
+		388
+
+	MAXCNT = 2N - 1 for 2x position mode, where N is the number of counts per revolution of the encoder
+
+		= 2 (100) - 1 = 199
+		
+		= 2 (400) - 1 = 799
+
+	UDSRC 
+
+		Only used when QEM is a timer
+
+QEI working
+
+	May need to add filter
+
+	qei_rev may be too low
+
+I2C
+
+	I2CBRG = (FCY/FSCL - FCY/1,111,111) - 1 = (7.37MHz/100KHz - 7.37MHz/1,111,111) - 1 = 66.067 = 66 = 0x42
+
+	SRF02
+
+		Doesn't state FSCL, going to use 100KHz to start
+
+		Do not initiate a range faster than every 66ms
+
+// Printed
+
+
+2011-03-08 
+
+Motors work
+
+QEI works
+
+Gyro works
+
+2011-03-09 
+
+Ultrasonic works
+
+LCD
+
+
+2011-03-10 
+
+Need to figure out how to get compiler to use my xlcd files
+
+
+2011-03-16 
+
+LISY300
+
+	AtoD
+
+		10b
+
+		0-3.3V
+
+		Resolution = 3.3V/2^10 = 3.22mV/step
+
+		sensitivity = 3.3mV/DEG/s
+
+		1.6V @ rest
+
+	Working 
+	
+	Had to shift result >>3 instead of >>2
+
+
+2011-03-17 
+
+LISY300
+
+	Will not treat lisy300_delta = +/-1 as a change
+
+PWM
+
+	2^15 = 0x8000
+	
+	FPWM = 46.0829Hz
+
+	PTPER = FCY/(FPWM * PTMR_Prescaler) - 1
+
+		= 7.37MHz/(46.0829Hz * 4) - 1 = 39981.25 = 0x9C2D
+
+		= 7.37MHz/(46.0829Hz * 16) - 1 = 9994.5625 = 0x270A
+
+	FPWM = FCY/(PTMR_Prescaler (PTPER + 1)) 
+
+		= 7.37MHz/(4 (39981 + 1)) = 46.08323746Hz
+
+		= 7.37MHz/(16 (9994 + 1)) = 46.08554277Hz
+
+	TPWM = 21.6999ms
+
+	TPWM = 21.699ms
+
+PWM works
+
+Servo Works
+
+	Prescaler = 4
+
+
+2011-03-21 
+
+Ultrasonic
+
+	Range every 15DEG when stopped
+
+	Range every 30DEG (maybe 45DEG) when moving
+
+// PRINTED
+
+
+2011-04-15 
+
+Got LCD working 
+
+Tested movement 
+
+	Turns left alot then resets itself
+
+LCD state machine
+
+	I/P
+
+		sw_back = enter
+
+		sw_up	= scroll down 
+
+			increment lcd_position
+
+	Events
+
+		Not Mapping
+
+		Mapping
+
+		Mapping Complete
+
+			GOTO LCD - Mapping Complete Screen
+
+		Error
+
+			GOTO LCD - Error Screen
+
+	O/P
+
+		LCD - Home Screen
+
+			MAP ROOM		// to Map Room Screen
+			OPTIONS			// To Options Screen
+
+			stopped
+
+			LCD - Map Room Screen
+
+				*MAPPING ROOM
+				STOP			// to Mapping Incomplete Screen
+				DIRECTION: x
+				DISTANCE:  y
+
+				move_obstacle_avoidance()
+
+				LCD - Mapping Incomplete Screen
+
+					*MAPPING INCOMPLETE		// Does not change, 1st line
+					BACK					// to Map Room Screen
+					RESET					// Reset values; return to Home Screen
+					DISTANCE X:	x
+					DISTANCE Y: y
+
+					stopped
+
+			LCD - Options Screen
+
+				BACK			// to Home Screen
+				SENSORS			// to Sensors Screen
+				SETTINGS		// To Settings Screen
+
+				stopped
+
+				LCD - Sensors Screen
+
+					BACK			// To Options Screen
+					GYROSCOPE		// To Gyroscope Screen
+					ENCODER			// To Encoder Screen
+					ULTRASONIC		// To Ultrasonic Screen
+
+					LCD - Gyroscope Screen
+
+						BACK		// To Sensors Screen
+						GYRO DIR = global_lisy300_direction
+
+					LCD - Encoder Screen
+
+						BACK		// To Sensor Screen
+						ENCODER CNT = qei_count
+
+					LCD - Ultrasonic Screen
+
+						BACK		// To Sensor Screen
+						FRONT SENSOR = global_srf02_range[0]
+						RIGHT SENSOR = global_srf02_range[1]
+
+				LCD - Settings Screen
+
+					BACK			// To Options Screen
+					RESET			// Resets values
+
+		LCD - Mapping Complete Screen
+
+			*MAPPING COMPLETE		// Does not change, 1st line
+			RESET					// Reset values; return to Home Screen
+			DISTANCE X:	x
+			DISTANCE Y: y
+
+		LCD - Error Screen
+
+			*ERROR
+			RESET					// Reset values; return to Home Screen
+
+
+2011-04-21 
+
+Navigation
+
+	Happy for now
+
+Logging
+
+
+2011-04-25
+
+polar coordinates (r, θ) can be introduced as:
+
+    x = r cos θ, y = r sin θ 
+
+Convert degree to rad
+
+	degrees = rad * 180 / 3.1415926
+
+	rad = degree * 3.1415926 / 180

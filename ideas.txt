@@ -1,0 +1,26 @@
+Sensors
+
+	Laser range finder
+	LIDAR
+	Camera
+	Touch
+	Edge detection
+	GPS
+
+Propulsion
+
+	Wheeled
+
+Processing
+
+	Computer
+	Microcontroller
+
+Communication
+
+	Zigbee
+	WIFI
+	Speaker
+
+
+Use compass to find electrical fields
