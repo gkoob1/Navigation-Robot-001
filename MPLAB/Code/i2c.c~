@@ -1,0 +1,88 @@
+// THIS CODE IS FOR THE dsPIC30F6015 MICROCONTROLLER.    
+// I2C
+// NAME: koob_graham
+// DATE: 2011-03-02 
+//***********************************************************************
+
+//***********************************************************************
+// i2c_init()
+//	Configures I2C
+//
+//***********************************************************************
+
+void	i2c_init(void)
+{
+	OpenI2C(I2C_ON				&			// I2C Enable
+			I2C_IDLE_CON		&			// Stop in idle Mode
+			I2C_SLW_DIS			&			// Disable Slew Rate Control
+			I2C_SM_DIS			,			// SMBus Input Level
+			i2c_fscl_100khz		);			// FSCL = 100KHz
+
+	return;
+}
+
+//***********************************************************************
+// i2c_srf02_init()
+//	Configures I2C
+//
+//***********************************************************************
+
+void	i2c_srf02_init(void)
+{
+	i2c_srf02_ping();
+
+	return;
+}
+
+//***********************************************************************
+// i2c_srf02_ping()
+//	Configures I2C
+//
+//***********************************************************************
+
+void	i2c_srf02_ping(void)
+{
+	StartI2C();								// Generates I2C Start condition
+	MasterWriteI2C(srf02_address_w);		// Send SRF02 address
+	MasterWriteI2C(srf02_cmd);				// Send SRF02 a command
+	MasterWriteI2C(srf02_rrm_cm);			// Have SRF02 range /w result in cm
+	StopI2C();								// Generates I2C Stop condition
+
+	return;
+}
+
+//***********************************************************************
+// i2c_srf02_range()
+//	Configures I2C
+//
+//***********************************************************************
+
+unsigned int	i2c_srf02_range(void)
+{
+	unsigned int	value;
+
+	// Range High byte
+	StartI2C();								// Generates I2C Start condition
+	MasterWriteI2C(srf02_address_w);		// Send SRF02 address
+	MasterWriteI2C(srf02_range_h);			// Have SRF02 send range high byte
+	RestartI2C();							// NOP
+	MasterWriteI2C(srf02_address_r);		// Have SRF02 range /w result in cm
+	value = MasterReadI2C();				// Get Range High byte
+	StopI2C();								// Generates I2C Stop condition
+
+	value << 8;								// Shift high byte left
+
+	// Range High byte
+	StartI2C();								// Generates I2C Start condition
+	MasterWriteI2C(srf02_address_w);		// Send SRF02 address
+	MasterWriteI2C(srf02_range_l);			// Have SRF02 send range high byte
+	RestartI2C();
+	MasterWriteI2C(srf02_address_r);		// Have SRF02 range /w result in cm
+	value = value | MasterReadI2C();		// Get Range Low byte
+	StopI2C();								// Generates I2C Stop condition
+
+	return(value);
+}
+
+//***********************************************************************
+// vim: set foldmethod=indent:

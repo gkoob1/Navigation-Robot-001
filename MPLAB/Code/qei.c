@@ -1,0 +1,40 @@
+// THIS CODE IS FOR THE dsPIC30F6015 MICROCONTROLLER.    
+// QEI (Quadrature Motor Encoder)
+// NAME: koob_graham
+// DATE: 2011-02-23 
+//***********************************************************************
+
+//***********************************************************************
+// qei_init()
+//	Configures QEI
+//
+//***********************************************************************
+
+void	qei_init(void)
+{
+	ConfigIntQEI(	QEI_INT_ENABLE	&		// Enable QEI
+					QEI_INT_PRI_5	);		// QEI Interrupt priority 5
+
+	//OpenQEI(QEI_DIR_SEL_			&		// Position Counter Directon Control
+	OpenQEI(QEI_INT_CLK				&		// clk source select
+			QEI_INDEX_RESET_DISABLE	&		// position counter reset
+			//QEI_CLK_PRESCALE_		&		// I/P clk Prescale
+			//QEI_GATED_ACC_		&		// TMR Gated Time ACCUM EN
+			QEI_NORMAL_IO			&		// Position CNTR Direction
+											// State O/P Enable
+			QEI_INPUTS_NOSWAP		&		// I/P swap select
+			QEI_MODE_x2_MATCH		&		// Mode of operation select
+			QEI_IDLE_CON			,		// Idle Mode Operation
+			POS_CNT_ERR_INT_DISABLE	&		// Count Error Interrupt 
+											// Disable
+			//QEI_QE_CLK_DIVIDE_1_	&		// Filter CLK Divide Select
+			QEI_QE_OUT_DISABLE		);		// Filter O/P Enable
+			//MATCH_INDEX_			);		//
+
+	WriteQEI(qei_rev);
+
+	return;
+}
+
+//***********************************************************************
+// vim: set foldmethod=indent:

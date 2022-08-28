@@ -1,0 +1,36 @@
+// dsPIC30F6015 MICROCONTROLLER.    
+// Port Initializations.
+// NAME: koob_graham
+// DATE: 2011-02-07
+//***********************************************************************
+
+void	port_init(void)
+{
+	PORTB = 0x0004;		// RB<15>	= N/C
+	TRISB = 0x00F8;		// RB<14:8> = LCD
+						//			= RS,RW,CS,DB4,DB5,DB6,DB7
+						// RB<7:4>	= PGD/EMUD,PGC/EMUC,QEB,QEA
+						// RB<3:0>	= INDX,CS0,N/C,N/C
+
+	PORTC = 0x0000;		// RC<15:13> = N/C,N/C,N/C
+	TRISC = 0x0000;		// RC<12:0> = Do not exist
+
+	PORTD = 0x0000;		// RD<11:8>	= N/C,N/C,N/C,N/C
+	TRISD = 0x00FF;		// RD<7:4>	= W_FL,W_BL,W_BR,W_FR
+						// RD<3:0>	= Keypad
+						//			= BACK,UP,DOWN,ENTER
+
+	PORTE = 0x00E0;		// RE<7:4> = CS1,CS2,CS3,N/C
+	TRISE = 0x0000;		// RE<3:0> = N/C,N/C,PWM1H,PWM1L
+
+	PORTF = 0x0000;		// RF<6:4> = N/C,U2TX,U2RX
+	TRISF = 0x0014;		// RF<3:0> = U1TX,U1RX,N/C,N/C
+
+	PORTG = 0x0200;		// RG<9:6> = /SS2,SDO2,SDI2,SCK2
+	TRISG = 0x0080;		// RG<3:2> = SDA (I2C),SCL (I2C)
+
+	return;
+}
+
+//***********************************************************************
+// vim: set foldmethod=indent:
