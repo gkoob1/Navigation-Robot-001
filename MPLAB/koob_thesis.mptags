@@ -1,0 +1,22 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.5.4	//
+!_TAG_REVISION_NAME	MCHPTags	//
+!_TAG_REVISION_VERSION	6.0.1	//
+FRC_PLL4	M:\Proj\MPLAB\code\koob_thesis.c	36;"	v	line:36
+ICS_PGD	M:\Proj\MPLAB\code\koob_thesis.c	40;"	v	line:40
+MCLR_EN	M:\Proj\MPLAB\code\koob_thesis.c	39;"	v	line:39
+WDT_OFF	M:\Proj\MPLAB\code\koob_thesis.c	38;"	v	line:38
+_QEIInterrupt	M:\Proj\MPLAB\code\koob_thesis.c	201;"	f	line:201	signature:(void)
+_T2Interrupt	M:\Proj\MPLAB\code\koob_thesis.c	186;"	f	line:186	signature:(void)
+lisy300_time	M:\Proj\MPLAB\code\koob_thesis.c	62;"	v	line:62
+main	M:\Proj\MPLAB\code\koob_thesis.c	65;"	f	line:65	signature:(void)
+qei_count	M:\Proj\MPLAB\code\koob_thesis.c	59;"	v	line:59
+speed	M:\Proj\MPLAB\code\koob_thesis.c	69;"	l	line:69
+srf02_time	M:\Proj\MPLAB\code\koob_thesis.c	63;"	v	line:63
+t2_time	M:\Proj\MPLAB\code\koob_thesis.c	61;"	v	line:61
+test_lisy300	M:\Proj\MPLAB\code\koob_thesis.c	67;"	l	line:67
+test_srf02	M:\Proj\MPLAB\code\koob_thesis.c	67;"	l	line:67

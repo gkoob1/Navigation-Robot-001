@@ -1,0 +1,75 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.5.4	//
+!_TAG_REVISION_NAME	MCHPTags	//
+!_TAG_REVISION_VERSION	6.0.1	//
+FRC_PLL4	J:\Proj\MPLAB\code\koob_thesis.c	36;"	v	line:36
+ICS_PGD	J:\Proj\MPLAB\code\koob_thesis.c	40;"	v	line:40
+MCLR_EN	J:\Proj\MPLAB\code\koob_thesis.c	39;"	v	line:39
+WDT_OFF	J:\Proj\MPLAB\code\koob_thesis.c	38;"	v	line:38
+_QEIInterrupt	J:\Proj\MPLAB\code\koob_thesis.c	305;"	f	line:305	signature:(void)
+_T2Interrupt	J:\Proj\MPLAB\code\koob_thesis.c	268;"	f	line:268	signature:(void)
+debounce_time	J:\Proj\MPLAB\code\koob_thesis.c	54;"	v	line:54
+def_lcd_item	J:\Proj\MPLAB\code\koob_thesis.c	115;"	g	line:115	file:
+def_lcd_screen	J:\Proj\MPLAB\code\koob_thesis.c	104;"	g	line:104	file:
+degree_turn	J:\Proj\MPLAB\code\koob_thesis.c	81;"	m	line:81	struct:navigation_struct	file:
+direction	J:\Proj\MPLAB\code\koob_thesis.c	79;"	m	line:79	struct:navigation_struct	file:
+distance	J:\Proj\MPLAB\code\koob_thesis.c	83;"	m	line:83	struct:navigation_struct	file:
+distance_x	J:\Proj\MPLAB\code\koob_thesis.c	84;"	m	line:84	struct:navigation_struct	file:
+distance_y	J:\Proj\MPLAB\code\koob_thesis.c	85;"	m	line:85	struct:navigation_struct	file:
+drive_time	J:\Proj\MPLAB\code\koob_thesis.c	63;"	v	line:63
+encoder_screen	J:\Proj\MPLAB\code\koob_thesis.c	109;"	e	line:109	enum:def_lcd_screen	file:
+error_screen	J:\Proj\MPLAB\code\koob_thesis.c	114;"	e	line:114	enum:def_lcd_screen	file:
+global_lisy300_degree_goal	J:\Proj\MPLAB\code\koob_thesis.c	70;"	v	line:70
+global_lisy300_degree_turn	J:\Proj\MPLAB\code\koob_thesis.c	69;"	v	line:69
+global_lisy300_direction	J:\Proj\MPLAB\code\koob_thesis.c	71;"	v	line:71
+global_movement	J:\Proj\MPLAB\code\koob_thesis.c	92;"	v	line:92
+global_movement_old	J:\Proj\MPLAB\code\koob_thesis.c	93;"	v	line:93
+global_movement_time	J:\Proj\MPLAB\code\koob_thesis.c	65;"	v	line:65
+global_movement_x	J:\Proj\MPLAB\code\koob_thesis.c	94;"	v	line:94
+global_movement_y	J:\Proj\MPLAB\code\koob_thesis.c	95;"	v	line:95
+global_movement_z	J:\Proj\MPLAB\code\koob_thesis.c	96;"	v	line:96
+global_movement_zz	J:\Proj\MPLAB\code\koob_thesis.c	97;"	v	line:97
+global_nav_log	J:\Proj\MPLAB\code\koob_thesis.c	91;"	v	line:91
+global_srf02_autotune	J:\Proj\MPLAB\code\koob_thesis.c	74;"	v	line:74
+global_srf02_range	J:\Proj\MPLAB\code\koob_thesis.c	73;"	v	line:73
+global_wall_dist	J:\Proj\MPLAB\code\koob_thesis.c	101;"	v	line:101
+global_wall_min	J:\Proj\MPLAB\code\koob_thesis.c	98;"	v	line:98
+gyroscope_screen	J:\Proj\MPLAB\code\koob_thesis.c	108;"	e	line:108	enum:def_lcd_screen	file:
+home_screen	J:\Proj\MPLAB\code\koob_thesis.c	104;"	e	line:104	enum:def_lcd_screen	file:
+item_0	J:\Proj\MPLAB\code\koob_thesis.c	115;"	e	line:115	enum:def_lcd_item	file:
+item_1	J:\Proj\MPLAB\code\koob_thesis.c	116;"	e	line:116	enum:def_lcd_item	file:
+item_2	J:\Proj\MPLAB\code\koob_thesis.c	117;"	e	line:117	enum:def_lcd_item	file:
+item_3	J:\Proj\MPLAB\code\koob_thesis.c	118;"	e	line:118	enum:def_lcd_item	file:
+item_4	J:\Proj\MPLAB\code\koob_thesis.c	119;"	e	line:119	enum:def_lcd_item	file:
+item_5	J:\Proj\MPLAB\code\koob_thesis.c	120;"	e	line:120	enum:def_lcd_item	file:
+item_6	J:\Proj\MPLAB\code\koob_thesis.c	121;"	e	line:121	enum:def_lcd_item	file:
+item_7	J:\Proj\MPLAB\code\koob_thesis.c	122;"	e	line:122	enum:def_lcd_item	file:
+item_8	J:\Proj\MPLAB\code\koob_thesis.c	123;"	e	line:123	enum:def_lcd_item	file:
+item_9	J:\Proj\MPLAB\code\koob_thesis.c	124;"	e	line:124	enum:def_lcd_item	file:
+key_value	J:\Proj\MPLAB\code\koob_thesis.c	138;"	l	line:138
+lcd_position	J:\Proj\MPLAB\code\koob_thesis.c	135;"	l	line:135
+lcd_position_max	J:\Proj\MPLAB\code\koob_thesis.c	137;"	l	line:137
+lcd_position_old	J:\Proj\MPLAB\code\koob_thesis.c	136;"	l	line:136
+lcd_screen	J:\Proj\MPLAB\code\koob_thesis.c	134;"	l	line:134
+lisy300_time	J:\Proj\MPLAB\code\koob_thesis.c	55;"	v	line:55
+main	J:\Proj\MPLAB\code\koob_thesis.c	131;"	f	line:131	signature:(void)
+map_room	J:\Proj\MPLAB\code\koob_thesis.c	140;"	l	line:140
+map_room_screen	J:\Proj\MPLAB\code\koob_thesis.c	105;"	e	line:105	enum:def_lcd_screen	file:
+mapping_complete_screen	J:\Proj\MPLAB\code\koob_thesis.c	113;"	e	line:113	enum:def_lcd_screen	file:
+mapping_incomplete_screen	J:\Proj\MPLAB\code\koob_thesis.c	112;"	e	line:112	enum:def_lcd_screen	file:
+message_time	J:\Proj\MPLAB\code\koob_thesis.c	61;"	v	line:61
+navigation	J:\Proj\MPLAB\code\koob_thesis.c	89;"	v	line:89
+navigation_struct	J:\Proj\MPLAB\code\koob_thesis.c	77;"	s	line:77	file:
+options_screen	J:\Proj\MPLAB\code\koob_thesis.c	106;"	e	line:106	enum:def_lcd_screen	file:
+qei_count	J:\Proj\MPLAB\code\koob_thesis.c	48;"	v	line:48
+qei_count_old	J:\Proj\MPLAB\code\koob_thesis.c	50;"	v	line:50
+sensors_screen	J:\Proj\MPLAB\code\koob_thesis.c	107;"	e	line:107	enum:def_lcd_screen	file:
+servo_time	J:\Proj\MPLAB\code\koob_thesis.c	57;"	v	line:57
+settings_screen	J:\Proj\MPLAB\code\koob_thesis.c	111;"	e	line:111	enum:def_lcd_screen	file:
+srf02_time	J:\Proj\MPLAB\code\koob_thesis.c	59;"	v	line:59
+t2_time	J:\Proj\MPLAB\code\koob_thesis.c	53;"	v	line:53
+ultrasonic_screen	J:\Proj\MPLAB\code\koob_thesis.c	110;"	e	line:110	enum:def_lcd_screen	file:
