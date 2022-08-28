@@ -1,0 +1,90 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+
+  
+  <meta content="text/html;charset=ISO-8859-1" http-equiv="Content-Type">
+
+  
+  <title>Using a SyRen motor driver with an ATX supply</title>
+</head>
+
+
+<body style="background-color: rgb(228, 235, 237); color: rgb(0, 0, 0);" alink="#ee0000" link="#0000ee" vlink="#551a8b">
+
+<div style="text-align: center;"><big><big><big><span style="font-weight: bold;">SyRen application note</span></big></big></big><br>
+</div>
+<div style="text-align: center;"><big style="font-weight: bold;"><big><small>Using a SyRen with an ATX power supply</small><br>
+</big></big></div>
+<div style="text-align: center;"></div>
+The SyRen works great when powered by batteries in mobile robots.
+However, some of our customers may want to control DC motors in a fixed
+installation environment - for example, a conveyor belt. In such
+situations, a power source&nbsp;running off AC mains is preferable for
+24/7 operation. A great low cost solution is an ATX power supply from a
+computer. They can usually supply 12V and 10A with ease. They are
+designed to run 24/7 and are good at dealing with changing loads.<br>
+
+<br>
+
+This guide will show you how to hook up an ATX supply for reliable operation with a SyRen motor driver.<br>
+
+<br>
+
+You will need:<br>
+A SyRen motor driver<br>
+An ATX power supply<br>
+
+A 5 Ohm power resistor, rated at 5 Watts or more<br>
+A sealed lead acid 12V battery - Minimum capacity of at least 1.3Ah<br>
+Wire cutting/stripping/soldering tools<br>
+<img style="width: 640px; height: 451px;" alt="" src="everything.jpg"><br>
+
+<br>
+<br>
+Many ATX supplies will require a minimum load on the 5V rail in order
+to provide a stable output voltage on the 12V rail. Many supplies won't
+even turn on without it! In order to get around this, connect a 5 ohm
+resistor between +5V and Ground of the supply. On an ATX supply, the
+red wire is always +5V, and any of the black wires is ground. Doing
+this will put a 1A load on the supply, which should get things working
+nicely. <br>
+<img style="width: 500px; height: 482px;" alt="" src="5ohms.jpg"><br>
+<br>
+Many DC power supplies can only supply current, not sink it. Since the
+SyRen is a regenerative motor driver, it will try to put energy back
+into the power source when it is braking. This might trip the safeguard
+electronics on an ATX power supply. In order to prevent this, you
+should put a battery in parallel with the 12V rails of the ATX supply.
+This will allow the regenerated energy to be absorbed into the battery,
+rather than the ATX supply. The ATX&nbsp;supply will ensure the battery is
+always charged to 12V so you never have to worry about recharging the battery again. Although similar batteries should work, we
+recommend using a 12V sealed lead acid battery with &gt;1.3Ah capacity
+because they are cheap and they get the job done. <a href="http://www.radioshack.com/product/index.jsp?productId=2103438&amp;cp=&amp;pg=1&amp;y=6&amp;kw=sealed+lead+acid&amp;x=15&amp;s=A-StorePrice-RSK&amp;parentPage=search">Example 1</a>&nbsp;<a href="http://www.batteryspace.com/index.asp?PageAction=VIEWPROD&amp;ProdID=2142">Example 2</a><br>
+So the next step is to connect your battery to the 12V supply. The -ve
+terminal will go to the power supply's ground (black wire) and the +ve
+terminal will go to the power supply's 12V rail (yellow wire). At this
+point, you should hear the ATX supply's fans spinning, even if you
+haven't plugged the ATX supply into the wall yet. This is normal,
+because the fans are connected to the 12V rail, and right now you are
+temporarily powering them from the battery. <br>
+<img style="width: 640px; height: 467px;" alt="" src="batteryconnected.jpg"><br>
+<br>
+In order to&nbsp;turn on an ATX supply so that it is being powered by
+the mains, you must connect the green wire to ground. You can just cut
+the green wire from the ATX header, and connect it to any black wire in
+the system. You can even touch the green wire to the ATX supply's case,
+since the case is grounded. <br>
+<img style="width: 422px; height: 293px;" alt="" src="atxheader.jpg"><img style="width: 311px; height: 350px;" alt="" src="greengrounded.jpg"><br>
+<br>
+You now should have a working 12V DC supply in parallel with a battery,
+capable of delivering a lot of current and suitable for connection to a
+SyRen. Add battery connectors and switches as per your liking and have
+fun!<br>
+<img style="width: 640px; height: 389px;" alt="" src="allconnected.jpg"><br>
+<br>
+<a href="http://www.dimensionengineering.com/">Back to Dimension Engineering</a><br>
+<a href="http://www.batteryspace.com/index.asp?PageAction=VIEWPROD&amp;ProdID=2142"></a><br>
+
+</body>
+</html>

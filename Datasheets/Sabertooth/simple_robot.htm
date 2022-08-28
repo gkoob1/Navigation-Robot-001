@@ -1,0 +1,79 @@
+<style type="text/css">
+<!--
+body {
+	background-color: #E4EBED;
+}
+.style2 {font-size: 24px}
+.style4 {font-size: 18px}
+-->
+</style><title>Building a simple antweight R/C combat robot with Sabertooth 2X5 R/C</title>
+<p align="center"><strong><span class="style4">Sabertooth 2X5 R/C application note</span><br />
+    <span class="style2">Building a simple antweight R/C combat robot </span></strong></p>
+<p><br />
+  In this guide we will show you how to make a simple antweight R/C combat robot using a Sabertooth 2X5 R/C. The 'bot doesn't necessarily have to be used in combat - it is a pretty fun toy to drive around the office too! There is a certain satisfaction you get from driving your own homemade vehicle that you can't get from an imported Walmart toy. The Sabertooth 2X5 R/C will be used to interpret signals from a radio control system, and vary the motor speed  so you can drive the robot around. The project requires basic knowledge of electronics (Volts, amps, battery polarity and wiring) and intermediate soldering skills. The project can be completed in  a day, with most of the time spent waiting for glue to dry. </p>
+<p> <strong>Parts list:</strong><br />
+    <a href="http://www.dimensionengineering.com/Sabertooth2X5RC.htm">Sabertooth 2X5 R/C motor driver </a><br />
+    <a href="http://www.inertialabs.com/">Motors, wheels and chassis</a><br />
+  Hobby radio control <a href="http://www.robotcombat.com/marketplace_rc-radios.html">transmitter</a> and <a href="http://www.robotcombat.com/marketplace_rc-receivers.html">receiver</a><br /> 
+  <a href="http://www.commonsenserc.com/product_info.php?cPath=37_35&amp;products_id=58">Battery</a> (at least 6V) <br />
+  <a href="http://www.radioshack.com/product/index.jsp?productId=2062365&amp;cp=&amp;origkw=ceramic&amp;kw=ceramic&amp;parentPage=search">Ceramic capacitors</a><br />
+  Misc wire and soldering tools <br />
+  <br />
+<strong>Overview</strong></p>
+<p align="center"><img src="Sabertooth-2X5-RC-4-wheels.jpg" width="660" height="640" /></p>
+<p>  As you can see, power will go from the battery in to the Sabertooth motor driver. The Sabertooth has an internal 5V regulator that it will use to power the receiver. The receiver will pick up your control info i.e. the direction you want to drive in, and it will signal that information back to the Sabertooth. The Sabertooth will then process this information, and vary the voltage and direction going to the motors. By varying the voltage going to the motors, you will be able to drive the robot at different speeds and turn it left and right like a tank. In this kit, we are using 4 motors - 2 on each side. We will wire the 2 motors in parallel on each side so they will appear as one motor to the Sabertooth. The 'flip' channel is purely optional - it just reverses left and right steering if your robot gets flipped upside down so you don't have to think backwards. <br />
+  <br />
+  <strong>The chassis<br />
+   </strong>One of the most time consuming things in building robots is constructing the chassis. If you do not have metalworking machinery available to you, you might want to check out <a href="http://www.inertialabs.com/">Inertia Labs' website</a>. They offer a package where you can get a CNC machined aluminum chassis and 4 geared motors for $99. It will allow you to start work on your robot right away without having to deal with metal shavings embedded in your eyes. </p>
+<p align="center">    <br />
+  <img src="inertiakit.jpg" alt="inertia labs kit" width="500" height="316" /><br />
+  This is everything you get in the  Inertia Labs kit - the gearmotors are tiny! </p>
+<p><strong>Setting up the motors<br />
+</strong>This is the only part where you will have to do some soldering. Out of the box, the motors do not come with any suppression capacitors. With a DC brushed motor, if you do not have suppression capacitors the commutator will produce small sparks which will cause radio interference. Adding 0.1uF or 10nF ceramic capacitors to the motor terminals will solve this problem. You can find such capacitors at <a href="http://www.radioshack.com/product/index.jsp?productId=2062365&amp;cp=&amp;origkw=ceramic&amp;kw=ceramic&amp;parentPage=search">radio shack</a> or any electronic component store.   <a href="http://www.digikey.com">Digikey</a> part # 399-4264-ND       &quot;CAP .1UF 50V 10% CER RADIAL&quot; is also a good choice. You will need two caps for each motor. Solder one capacitor lead to a motor terminal, and the other lead to the motor's casing. Next, cut and strip some wire to solder to the motor terminals. Put the tires on the wheels and glue the wheels onto the motor's shaft. </p>
+<p align="center"><img src="motorcaps.jpg" alt="motor capacitors" width="408" height="262" /><img src="motorwires.jpg" alt="motor wires" width="400" height="191" /><br />
+      <br />
+    <img src="4motors.jpg" alt="motors" width="330" height="500" /><br />
+    While waiting for the glue to dry, I was reminded of Don King. </p>
+<p align="left">Once the glue is dry, you need to put the motors into the chassis. To hold the motors in place, I used <a href="http://www.hmcelectronics.com/cgi-bin/scripts/product/4675-0028/">Loctite 415</a> adhesive. It is similar to superglue, but does a better job bonding metal to metal. It takes a long time to cure though so be patient.</p>
+<p align="center">  <br />  
+<img src="motorswired.jpg" width="500" height="361" /></p>
+<p><strong>The battery</strong><br />
+Next up, you need a power source i.e. a battery. To keep things really small and light we used an <a href="http://www.commonsenserc.com/product_info.php?cPath=37_35&amp;products_id=58">800mAh 2s lithium pack</a>. A Sabertooth will run at any voltage above 6V, so you could also use a cheap 7.2V NiMH pack, or even 6 alkaline AAA batteries if you think you can make them fit. Just don't go crazy and dump 18V into these tiny motors else you will burn them out. Remember to get an appropriate charger for the battery chemistry you use. We used a <a href="http://www.commonsenserc.com/page.php?page=intro.htm">Common Sense R/C</a> brand pack here, which came with a JST battery connector. These connectors are also sometimes known as P connectors or BEC connectors. Battery connectors are important because they allow you to quickly and safely connect/disconnect power to the robot. Depending on where you buy your battery pack from, you might find this connector already soldered on there for you. </p>
+<p align="center"><img src="batterypack.jpg" alt="battery" width="350" height="221" /></p>
+<p>BEC/P/JST battery connectors are available from Maxx Products <a href="http://www.maxxprod.com/mpi/mpi-3.html">here</a> . Part number 2832 is the female connector (goes on the battery) and part number 2830 is the male connector (will screw into the Sabertooth). You can also find them at your local hobby shop. Other battery connectors will work, but JST ones are nice and small. </p>
+<p><strong>Radio and receiver</strong></p>
+<p align="center"><br />  
+  <img src="txandrx.jpg" alt="optic 6" width="249" height="350" /></p>
+<p><br />
+  To remotely control the robot, you will need a hobby radio control transmitter and receiver. These pieces of equipment can be expensive - anywhere from $80 to several hundred dollars. They are an investment that will last many years though, and if you get a good system you will be able to create many radio controlled vehicles down the line. Remember that the radio and receiver must both operate on the same channel, and for ground applications in the USA you should technically use a 75Mhz system not a 72Mhz system. For the purposes of a simple bot like this, a 4 channel transmitter and receiver will suffice. <a href="http://www.longnow.org/rhino/AntChassisKit.htm#GWStx">Inertia  sells some low end ones</a>. If you can afford it, the absolute best system to get is the <a href="http://www.robotcombat.com/marketplace_rc_radioDX6.html">2.4 Ghz Spektrum DX6 or DX7 system with a BR6000 receiver</a>.  I used a 6 channel Hitec Optic 6 transmitter and a GWS Naro receiver because that's what we had lying around at the DE office. <br />  
+  <br />    
+  <strong>Motor driver configuration<br />
+</strong>To set up the motor driver, use this guide to the DIP switches:</p>
+<p align="center"><img src="DIP-setting.jpg" width="450" height="436" /></p>
+<p align="left">For this particular robot and transmitter, we used the following settings for the following reasons:<br />
+Enable mixed mode (for easy steering on one stick)<br />
+Disable exponential (the robot was easy enough to control without exponential)<br />
+  Lithium mode (because we were using a 2s Lithium Polymer battery)<br />
+  R/C flip mode (so we could use a switch on the transmitter to reverse left/right if the robot flipped upside down)<br />
+  Enable autocalibrate (quicker and easier than setting the trim on the transmitter) <br />
+Enable signal timeout (Helps prevent the robot driving away when there is a loss of signal, and is required for events) </p>
+<p align="center"><img src="wired.jpg" alt="wired" width="640" height="370" /></p>
+<p>Once everything is wired up as shown in the earlier diagram, it is a good idea to turn on your radio, plug in the battery and do a test run. Make sure up, down, left and right all behave as you want them to. Make sure all motors are turning in the correct direction. When I got to this stage, I found out that 3 of the motors were going one way, and one was going backwards! So I just swapped the two wires on the odd motor and it solved the problem. Other common problems would be having up/down being controlled by left/right on your radio - in which case just swap the receiver channels the servo pigtails are going into. Also check the DIP switch settings on Sabertooth are correct. </p>
+<p align="center"><img src="rewired.jpg" alt="battlebot" width="450" height="434" /></p>
+<p>Now the most annoying part of all: getting everything to fit in that tiny space!  Pretend you are playing Tetris and you will be motivated to do a better job. I managed to pull it off with the arrangement shown here.</p>
+<p align="center"><img src="compactarrangement.jpg" alt="battlebot" width="640" height="496" /></p>
+<p><strong>The final touches (and weapons!) </strong><br />
+  By now you should have a fully functioning 'bot that you can drive around. You might notice however, that the 'bot jerks around and occasionally goes crazy. This would be due to glitches in radio reception. On a 75Mhz system, antenna placement and orientation is very important! Simply coiling up your antenna and shoving it inside the chassis will not give good results at all. Ideally you want the antenna wire as far away as possible from the motor driver and mounted vertically in parallel with your radio transmitter. Although it would be more rigid, it is important that you do <em>not</em> wrap the antenna around a metal rod. The metal rod will act as a shield, and will absorb the radio waves instead of allowing them to resonate in the antenna. Instead, use a non conductive  rigid tube, such as a nylon rod. Cheaper solutions can also work!</p>
+<p align="center"><img src="antenna_protection.jpg" alt="antenna" width="400" height="376" /><br />
+Antenna optimization on the cheap</p>
+<p align="center"><img src="antennaglue.jpg" width="350" height="306" /><br />
+Attaching the antenna holder </p>
+<p align="left">The most basic of all weapons is a wedge. You can make a wedge out of a scrap sheet of aluminum, using a vise to bend it. Mark out a strip 2-3&quot; wide and 6&quot; long, and use the vise to hold it in place as you put some kinks in it. You can also chop off the end at an angle to create a spike. </p>
+<p align="center"><img src="scrappieceofAl.jpg" alt="scrap aluminum" width="389" height="274" /><img src="unbended.jpg" alt="aluminum" width="350" height="141" /><img src="bender.jpg" alt="bender" width="350" height="301" /></p>
+<p align="center">You will want to create a very strong bond between the wedge and the chassis, so superglue won't be enough. Screw it down, or a use a strong epoxy.</p>
+<p align="center"><img src="completed2.jpg" alt="robot" width="464" height="640" /><br />
+Done!</p>
+<p align="left"><a href="./video.wmv"><img src="video.jpg" alt="robot video" width="289" height="217" border="0" /> 5mb video of the robot terrorizing various office supplies, and demonstrating the instant reverse capability. </a></p>
+<p align="left"><strong>Additional notes</strong><br />
+If you want to use this platform to compete in combat, you will have to beef it up a little with additional weight and weaponry. Inertia's <a href="http://picasaweb.google.com/longnow/PersonalProjects/photo#5013317481202016866">Pele bot</a> and <a href="http://picasaweb.google.com/longnow/PersonalProjects/photo#5013317485496984178">Hummer bot</a> have some creative ideas. Even if you don't want to compete in tournaments, the same basic setup can be used to make R/C planes, boats, trucks, bulldozers, tanks, hovercrafts and more! </p>
+<p align="left"> <a href="http://www.dimensionengineering.com/">Back to Dimension Engineering</a></p>

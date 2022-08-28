@@ -1,0 +1,35 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+
+  
+  <meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type">
+
+  
+  <title>Dimension Engineering motor driver topology efficiency comparison</title>
+</head>
+
+
+<body style="background-color: rgb(228, 235, 237); color: rgb(0, 0, 0);" alink="#ee0000" link="#0000ee" vlink="#551a8b">
+<h1 align="center"><strong>Dimension Engineering motor driver efficiency comparison</strong></h1>
+<p>In this article, we will demonstrate how Dimension Engineering's motor drivers can conserve battery life in your robot  compared to other companies' solutions. Most motor drivers use the conventional H bridge topology that recirculates current in the motor during each switching cycle. Our solution returns the current to the battery, which results in lower average power consumption. The extent of the power savings depends on the motor you are using. In these tests, we will take the exact same load and compare how much current a <a href="http://www.dimensionengineering.com/SyRen10.htm">SyRen</a>/<a href="http://www.dimensionengineering.com/Sabertooth2X10.htm">Sabertooth</a> draws versus the current a <a href="http://www.lynxmotion.com/Product.aspx?productID=493&CategoryID=">Parallax HB-25</a> draws. </p>
+<p align="left"><strong>Test 1:</strong> <br>
+The motor under test was a Denso power window geared motor with no additional load.</p>
+<p align="center"><br>  
+  <img src="Densopic.jpg" alt="Denso geared motor" width="400" height="364"></p>
+<p align="left">The power source was set to 13.8V and throttle was varied across the motor's usable range. Results were measured with a simple magnetic tachometer and a current meter.</p>
+<p align="center"><br>  
+  <img src="Denso.jpg" alt="Motor driver efficiency" width="1000" height="688"></p>
+<p>You can see that our regenerative topology resulted in a current draw approximately 15% less than a standard H-bridge, for the same load.</p>
+<p><strong>Test 2:</strong> <br>
+The motor under test was a Promax 480 motor with a Cox 7.5 x 6 propellor load. The motor was clamped in a vice to ensure it didn't fly away and decapitate people. </p>
+<p align="center"><br>
+  <img src="Promax480pic.jpg" alt="Promax 480 motor" width="226" height="400"></p>
+<p align="left">  The power source was set to 7.2V and throttle was varied across the motor's usable range. Results were taken with a simple laser tachometer and a current meter. </p>
+<p align="center"><img src="Promax480.jpg" alt="motor driver comparison" width="1000" height="662"></p>
+<p>You can see that our regenerative topology resulted in a current draw roughly 11% less than a standard H-bridge, for the same load. </p>
+<p><strong>Conclusion<br>
+</strong>Since battery life is proportional to current draw, we can conclude that choosing a <a href="http://www.dimensionengineering.com/SyRen10.htm">SyRen</a> or a <a href="http://www.dimensionengineering.com/Sabertooth2X10.htm">Sabertooth</a> for your next robotics project will give you 10-15% more battery life than with other motor drivers. This would result in many more casualties if your robot becomes autonomous and starts crushing humans.</p>
+<p><a href="http://www.dimensionengineering.com">Back to Dimension Engineering</a></p>
+</body>
+</html>

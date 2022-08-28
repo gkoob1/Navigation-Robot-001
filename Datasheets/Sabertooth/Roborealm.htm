@@ -1,0 +1,60 @@
+<title>Using your PC to control a Sabertooth motor driver with Roborealm</title><style type="text/css">
+<!--
+body {
+	background-color: rgb(228, 235, 237);
+}
+.style1 {
+	font-size: 24px;
+	font-weight: bold;
+}
+-->
+</style>
+<div align="center">
+  <p class="style1">Using your PC to control a Sabertooth motor driver with Roborealm</p>
+</div>
+<p><strong>Introduction</strong><br />
+  With some additional hardware, you can use our motor drivers to control the speed of motors with your computer. Roborealm is a free piece of software designed to aid you in making a vision controlled robot. Put it all together and you have a platform that will allow you to develop a robot with a PC camera vision system. 
+This article is aimed at people who have some experience with windows programming but are unfamiliar with the hardware needed for serial communications in a typical robotics environment. </p>
+<p><strong>Overview</strong><br />
+  In order to control our motor drivers with your PC you will need a way of getting control information from your PC to the motor driver. Most PCs nowadays communicate with peripherals via USB. Our motor drivers require TTL level serial data for control information. So what is the solution? A USB to TTL serial converter! Here we will show you how to easily set one up.<br />
+  <br />
+  <strong>  Parts</strong><br />
+Superdroid Robots sell a highly integrated <a href="http://www.superdroidrobots.com/shop/item.asp?itemid=795&amp;catid=58">USB to TTL serial cable</a>. There are cheaper solutions that you can build yourself, but the SuperDroids USB to TTL cable is nice because it lets you get your project started with no soldering and minimum effort.<br />
+- <a href="http://www.superdroidrobots.com/shop/item.asp?itemid=795&amp;catid=58">USB to TTL serial cable</a> <br />
+-
+Motor(s) to connect to the motor driver<br />
+- Battery to power the motor driver<br />
+- Jumper wire <br />
+- Pliers, screwdrivers and other common hand tools. </p>
+<p align="center"><br />
+<img src="USBtoTTLcable.jpg" alt="USB to TTL cable" width="350" height="263" /><br />
+USB to TTL serial cable</p>
+<p align="left"><strong>Setting up the Sabertooth <br />
+</strong>First, connect your battery connector and motors to Sabertooth as normal.</p>
+<p align="center"><img src="motorsandbatteryconnector.jpg" width="640" height="340" /><br />
+Sabertooth motor and battery connector hookup</p>
+<p align="left">Next use the <a href="http://dimensionengineering.com/datasheets/Sabertoothdipwizard/start.htm">DIP switch wizard</a> to set up Sabertooth in Packetized serial mode at whichever address you want. I was using a lead acid battery and I feel like making this Sabertooth appear at address 128, so here is what my settings were: </p>
+<p align="center"><img src="address128.jpg" alt="address 128" width="500" height="300" /><br />
+Sabertooth with address set to 128 </p>
+<p align="left"><strong>Setting up the USB to TTL serial cable</strong><br />
+First you will need to install the virtual COM port drivers for the cable. <a href="http://www.ftdichip.com/Drivers/VCP.htm">You can get the drivers from here</a>. If you are having trouble choosing the right driver, <a href="FTDIdrivers.exe">give this one a try</a>.</p>
+<p align="center"><img src="Cablecloseup.jpg" alt="Cable" width="400" height="251" /><br />
+Both ends of the cable </p>
+<p align="left">After the drivers are installed, plug the USB end of the cable into your PC. You should see Windows detecting the virtual COM port. After this takes place, go to Control panel, System, Hardware, Device manager. Under the Ports section you should see a USB Serial Port appearing with a COM port number next to it. This might be COM2, COM3, COM4 etc. depending on your computer. Note this number down! In the case of my PC I got COM5 assigned for the cable.</p>
+<p align="center"><a href="COM5appeared.jpg"><img src="thCOM5appeared.jpg" width="300" height="161" border="0" /></a><br />
+  We will be using COM5 for the remainder of the tutorial <br />
+</p>
+<p><strong>Connecting the cable to Sabertooth<br />
+</strong>The USB to TTL serial cable has many wires coming out of it that have different functions. Fortunately for us, we only have to worry about two of them! Use a pair of jumper wires to make a connection between the cable's black wire and the driver's 0V terminal and a connection between the cable's green wire and the motor driver's S1 input. This creates a common ground connection between the driver and your PC, and allows serial communications data to reach Sabertooth. Once you have a test project working you can cut and solder the cable for a more durable connection. </p>
+<p align="center"><img src="twowires.jpg" width="640" height="505" /><br />
+Connecting the cable to Sabertooth with two wires.</p>
+<p>Now is a good time to power up the motor driver.</p>
+<p><strong>Using Roborealm<br />
+</strong>First, register to <a href="http://www.roborealm.com/registration/index.php">download the roborealm software from here</a>. They will email you a link to download the software. While you are waiting check out their <a href="http://www.roborealm.com/help/index.php">help pages</a>. When you run Roborealm.exe go to Control, Motors, DE_Sabertooth.</p>
+<p align="center"><a href="Selecting_Sabertooth.jpg"><img src="thSelecting_Sabertooth.jpg" width="283" height="300" border="0" /></a></p>
+<p align="left">Select the COM port that your USB to TTL serial cables was assigned. Mine was COM5. You can leave the baud rate at 9600 for now. </p>
+<p align="center"><a href="SelectCOM5.jpg"><img src="thSelectCOM5.jpg" width="284" height="300" border="0" /></a></p>
+<p align="left">Once the COM port has been initialized you should see Sabertooth's Status 1 LED go from bright to dim. This means that Sabertooth has detected a valid baud rate. You should now be able to control the speed of two motors with the sliders and any additional code you write.</p>
+<p align="center"><a href="Changespeeds.jpg"><img src="thChangespeeds.jpg" width="300" height="304" border="0" /></a></p>
+<p align="left"><a href="http://www.dimensionengineering.com">Back to Dimension Engineering</a> </p>
+<p align="left">&nbsp;</p>
